@@ -8,7 +8,7 @@ import { Headset } from 'lucide-react';
 
 export default function Home() {
     return (
-        <div className="body h-[100%] w-full">
+        <div className="bg-[linear-gradient(180deg,rgba(9,9,11,1)_0%,rgba(15,15,20,1)_23%,rgba(15,15,20,1)_24%,rgba(15,23,26,1)_65%,rgba(17,30,33,1)_100%)] h-[100%] w-full">
             <div className="part text-white w-full h-full pt-[50px] flex flex-col items-center">
                 <nav className="h-[50px] w-[800px] bg-[#19191f]/50 rounded-[50px] border-[2px] border-gray-600 flex items-center justify-between pl-[50px] pr-[50px] shadow-lg shadow-black/60">
                     <InstagramIcon className="scale-[1.5] text-gray-200"/>
@@ -24,7 +24,7 @@ export default function Home() {
                     <button className="bg-gradient-to-r from-[#1b2424] via-[#0f2121] to-[#003030] text-white hover:bg-gradient-to-l hover:from-[#1b2424] hover:via-[#0f2121] hover:to-[#003030] font-semibold h-[50px] w-[150px] text-lg rounded-[10px] hover:cursor-pointer hover:scale-[1.05] shadow-lg shadow-black/30 mr-[20px] duration-200 ease-out">
                         Get Started
                     </button>
-                    <Link href="routes/register"
+                    <Link href="routes/home"
                         className="bg-gradient-to-r from-[#003030] via-[#0f2121] to-[#1b2424] text-white hover:bg-gradient-to-l hover:from-[#003030] hover:via-[#0f2121] hover:to-[#1b2424] font-semibold h-[50px] w-[150px] text-lg rounded-[10px] hover:cursor-pointer hover:scale-[1.05] shadow-lg shadow-black/30 duration-200 ease-out flex justify-center items-center">
                             Sign Up
                     </Link>
