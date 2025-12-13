@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import Header from "@/app/components/layout/Header";
-import LoginForm from "@/app/components/forms/RegisterForm";
+import Header from "@/components/layout/Header";
+import LoginForm from "@/components/forms/RegisterForm";
 
 export default function Page () {
     return (
