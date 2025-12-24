@@ -24,7 +24,7 @@ export default function Home() {
                     <button className="bg-gradient-to-r from-[#1b2424] via-[#0f2121] to-[#003030] text-white hover:bg-gradient-to-l hover:from-[#1b2424] hover:via-[#0f2121] hover:to-[#003030] font-semibold h-[50px] w-[150px] text-lg rounded-[10px] hover:cursor-pointer hover:scale-[1.05] shadow-lg shadow-black/30 mr-[20px] duration-200 ease-out">
                         Get Started
                     </button>
-                    <Link href="routes/home"
+                    <Link href="routes/choice"
                         className="bg-gradient-to-r from-[#003030] via-[#0f2121] to-[#1b2424] text-white hover:bg-gradient-to-l hover:from-[#003030] hover:via-[#0f2121] hover:to-[#1b2424] font-semibold h-[50px] w-[150px] text-lg rounded-[10px] hover:cursor-pointer hover:scale-[1.05] shadow-lg shadow-black/30 duration-200 ease-out flex justify-center items-center">
                             Sign Up
                     </Link>
