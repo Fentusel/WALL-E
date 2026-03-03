@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import LoginBtn from '../ui/login-btn';
 import {useRouter} from 'next/navigation';
@@ -25,8 +25,9 @@ export default function SignUpForm() {
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
+            await sendEmailVerification(user);
             await updateProfile(user, { displayName: userName });
-            router.push('/routes/home');
+            router.push('/routes/verify-email');
         } catch (error) {
             const errorMapping = {
                 'auth/email-already-in-use': 'Email is already in use.',

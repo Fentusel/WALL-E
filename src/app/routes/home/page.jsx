@@ -1,7 +1,49 @@
 'use client';
-import React from "react";
+import React, {useState, useEffect} from "react";
+import {auth, db} from "@/lib/firebase";
+import {onAuthStateChanged} from "firebase/auth";
+import {useRouter} from "next/navigation";
+import {doc, setDoc, getDoc} from "firebase/firestore";
+
 
 export default function HomePage() {
+    const router = useRouter();
+    const [loading, setLoading] = useState (true)
+    const [user,setUser] = useState(null);
+
+    const [role, setRole] = useState("job-seeker")
+    const [title, setTitle] = useState("");
+    const [ skills, setSkills] = useState("");
+    const [bio, setBio] = useState("");
+    const [exp, setExp] = useState("");
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+            if (currentUser) {
+                if(!currentUser.emailVerified) {
+                    router.push('/routes/verify-email');
+                    return;
+                }
+                setUser(currentUser);
+            } else {
+                router.push('/routes/login');
+            }
+            setLoading(false);
+        });
+        return () => unsubscribe();
+    }, [router]);
+
+    const handleSaveProfile = async (e) => {
+        e.preventDefault();
+        if (!user) return;
+
+        try {
+            const useRef = doc(db, "users", user.uid);}
+            catch (error) {
+            console.error("Error saving profile: ", error);
+            }
+    }
+
     return (
         <div className="flex flex-col min-h-screen w-full">
             <header className="p-4 bg-gray-800 text-white">
