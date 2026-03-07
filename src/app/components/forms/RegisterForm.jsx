@@ -27,6 +27,9 @@ export default function SignUpForm() {
             const user = userCredential.user;
             await sendEmailVerification(user);
             await updateProfile(user, { displayName: userName });
+            if (!user.emailVerified) {
+                await sendEmailVerification(user);
+            }
             router.push('/routes/verify-email');
         } catch (error) {
             const errorMapping = {
