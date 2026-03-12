@@ -14,7 +14,7 @@ export default function Home() {
                     <InstagramIcon className="scale-[1.5] text-gray-200"/>
                     <div className="flex items-center justify-center gap-[50px] font-bold text-lg">
                         <p className="hover:cursor-pointer hover:scale-[1.05] hover:text-[#8cc6d4] transition-all duration-300 ease-out">More Info</p>
-                        <Headset size="25px"  className="hover:cursor-pointer hover:scale-[1.5] hover:text-[#8cc6d4] transition-all duration-300 ease-out"/>
+                        <Link href="routes/support"><Headset size="25px"  className="hover:cursor-pointer hover:scale-[1.1] hover:text-[#8cc6d4] transition-all duration-300 ease-out"/></Link>
                     </div>
                 </nav>
                 <h1 className="mt-[100px] font-bold text-gray-200 text-[50px]">
