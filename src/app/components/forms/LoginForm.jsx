@@ -17,7 +17,7 @@ export default function LoginForm() {
         setError(null);
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            router.push('/routes/home');
+            router.push('/routes/profile-creation');
         } catch (error) {
             const errorMapping = {
                 'auth/invalid-email': 'Invalid email or password.',
